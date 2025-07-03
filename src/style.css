@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #212529;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+
+/* header */
+header {
+    padding: 30px 100px;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid #e0e0e0;  
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .site-title {
+    font-size: 24px;
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .nav a {
+    text-decoration: none;
+}
+
+header .hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: fixed;
+}
+
+header .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* main-image */
+.main-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section {
+    background-color: #fefefe;   
+}
+
+.section-grey {
+    background-color: #f7f7f7;
+}
+
+/* about-section */
+.about-container {
+    padding: 100px 20%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section-title h2 {
+    color: grey;
+    font-size: 2rem;
+    display: inline-block;
+    border-bottom: thick double grey;
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    margin-right: 30px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: 0 auto;
+}
+
+.sns {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sns a {
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.introduction h3 {
+    margin-bottom: 10px;
+    color: grey;
+}
+
+.introduction p {
+    max-width: 600px;
+    color: grey;
+    flex: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+/* journey-section */
+.journey-container {
+    padding: 100px 10%;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1 1 50%;
+}
+
+.slideshow {
+    position: relative;
+    z-index: 1;
+}
+
+.slideshow i {
+    color: white;
+    opacity: 0.5;
+    padding: 50px 10px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.slideshow i:hover {
+    opacity: 1;
+}
+
+.slideshow button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    z-index: 10;
+}
+
+.slideshow .prev {
+    left: 0;
+}
+
+.slideshow .next {
+    right: 0;
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease forwards;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+}
+
+.text {
+    background-color: #F5F5F5;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.text h3 {
+    font: bold;
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.text p {
+    color: grey;
+    margin-bottom: 10px;
+}
+
+/* works-section */
+.works-container {
+    padding: 100px 10%;
+}
+
+.app {
+    background-color: #fefefe;
+    margin-bottom: 50px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    border: thin solid black;
+}
+
+.app-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 10px;
+    border: thin solid #444;
+}
+
+.app-img img{
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.app-description {
+    flex: 1;
+    padding: 20px 20px 0 20px;
+    text-align: center;
+}
+
+.app-description h2 {
+    font: bold;
+    color: grey;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.app-description p {
+    color: grey;
+    margin-bottom: 10px;
+}
+
+.app-info {
+    list-style: none;
+}
+
+.app-info ul {
+    color: grey;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+
+.app-info strong {
+    margin-bottom: 10px;
+    color: grey;
+}
+
+.app-info li {
+    color: grey;
+    margin-bottom: 10px;
+}
+
+.app-info ul li {
+    margin-bottom: 0;
+}
+
+.app-description a {
+    margin-bottom: 5px;
+    display: block;
+    color: grey;
+    margin-left: auto;
+    text-decoration: none;
+    width: fit-content;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.app-description a:hover {
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+
+@media (max-width: 1024px) {
+    .about-container {
+        padding: 100px 15%;
+    }
+
+    .about-me {
+        flex-direction: column;
+    }
+
+    .profile {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .introduction h3 {
+        text-align: center;
+    }
+
+    .introduction p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    header .hamburger {
+        display: block;
+    }
+
+    header .nav-menu {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: white;
+        padding: 100px 80px 100px 30px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        align-items: center;
+    }
+
+    header .nav-menu.active {
+        right: 0;
+    }
+
+    header .nav-menu li {
+        border-bottom: thin solid black;
+    }
+
+    .about-container {
+        padding: 100px 10%;
+    }
+
+    .journey-container {
+        padding: 80px 10%;
+
+    }
+
+    .row1 {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .row2 {
+        flex-direction: column-reverse;
+    }
+
+    .text {
+        padding: 20px 0;
+    }
+
+    .works-container {
+        padding: 100px 10%;
+    }
+
+    .app {
+        flex-direction: column;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

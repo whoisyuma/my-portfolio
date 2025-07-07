@@ -272,8 +272,8 @@ header .nav-menu {
     justify-content: center;
     align-items: center;
     flex: 1;
-    padding: 10px;
-    border: thin solid #444;
+    /* padding: 10px; */
+    /* border: thin solid #444; */
 }
 
 .app-img img{
@@ -291,7 +291,7 @@ header .nav-menu {
 
 .app-description h2 {
     font: bold;
-    color: grey;
+    /* color: grey; */
     margin-bottom: 10px;
     text-decoration: underline;
 }
